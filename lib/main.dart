@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(
-      Quizzler(),
+      Quizzer(),
     );
 
-class Quizzler extends StatelessWidget {
+class Quizzer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -52,18 +52,19 @@ class _QuizPageState extends State<QuizPage> {
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              textColor: Colors.white,
-              color: Colors.green,
-              child: Text(
-                'True',
-                style: TextStyle(
+            child: TextButton(
+              child: Text('True'),
+              style: TextButton.styleFrom(
+                primary: Colors.white,
+                backgroundColor: Colors.green,
+                onSurface: Colors.grey,
+                textStyle: TextStyle(
                   color: Colors.white,
-                  fontSize: 20.0,
+                  fontSize: 20,
                 ),
               ),
               onPressed: () {
-                //The user picked true.
+                print('The user pressed True');
               },
             ),
           ),
@@ -71,17 +72,19 @@ class _QuizPageState extends State<QuizPage> {
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              color: Colors.red,
-              child: Text(
-                'False',
-                style: TextStyle(
-                  fontSize: 20.0,
+            child: TextButton(
+              child: Text('False'),
+              style: TextButton.styleFrom(
+                primary: Colors.white,
+                backgroundColor: Colors.red,
+                onSurface: Colors.grey,
+                textStyle: TextStyle(
                   color: Colors.white,
+                  fontSize: 20,
                 ),
               ),
               onPressed: () {
-                //The user picked false.
+                print('The user pressed false');
               },
             ),
           ),
